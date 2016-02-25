@@ -13,4 +13,16 @@ function initMap() {
       map: map,
       title: 'CICC'
   });
+
+  google.maps.event.addListener(map, 'click', function(event) {
+    addMarker(event.latLng);
+  });
+
+  function addMarker(ltlng) {
+    var marker = new google.maps.Marker({
+      position: ltlng, 
+      map: map,
+      title: 'My Marker'
+    });
+  }
 }
